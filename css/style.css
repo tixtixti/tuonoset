@@ -11,7 +11,8 @@ body{
     width: 100%;
     height: 100%;
     margin:0;
-    background-image: url("LandinPhotoTuonoset.jpg");
+    font-family: 'Alegreya Sans SC', sans-serif;
+    background-image: url("../photos/landing1080-2.jpeg");
     background-size: cover; /* for IE9+, Safari 4.1+, Chrome 3.0+, Firefox 3.6+ */
     -webkit-background-size: cover; /* for Safari 3.0 - 4.0 , Chrome 1.0 - 3.0 */
     -moz-background-size: cover; /* optional for Firefox 3.6 */
@@ -20,19 +21,41 @@ body{
     padding: 0; /* to remove the default white margin of body */
     overflow: hidden;
 }
-
-#login{
+.center-text {
+  margin-top: 15px;
+  text-align: center;
+}
+.center{
   display: flex;           /* establish flex container */
   flex-direction: column;  /* make main axis vertical */
   justify-content: center; /* center items vertically, in this case */
   align-items: center;     /* center items horizontally, in this case */
-  height: 100vh;
 }
+
+/*following must be total 100vh */
+.top{
+  height: 50vh
+}
+.mid{
+  height: 30vh
+}
+.bottom{
+  height: 20vh
+}
+
+h1{
+    font-family: 'Alegreya Sans SC', sans-serif;
+}
+
 .uutinen {
   text-align: center;
   font-family: 'Open Sans', sans-serif;
 }
-.logo {
+.logo{
+  width: auto;
+  height: 200px;
+}
+.logo-bar {
     width: 50px;
     border-radius: 50%;
    background-color: #FFF;
