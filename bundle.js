@@ -64,6 +64,14 @@
 
 	var _Uutinen2 = _interopRequireDefault(_Uutinen);
 
+	var _UutisContainer = __webpack_require__(175);
+
+	var _UutisContainer2 = _interopRequireDefault(_UutisContainer);
+
+	var _Start = __webpack_require__(176);
+
+	var _Start2 = _interopRequireDefault(_Start);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -78,17 +86,38 @@
 	  function Index() {
 	    _classCallCheck(this, Index);
 
-	    return _possibleConstructorReturn(this, (Index.__proto__ || Object.getPrototypeOf(Index)).apply(this, arguments));
+	    var _this = _possibleConstructorReturn(this, (Index.__proto__ || Object.getPrototypeOf(Index)).call(this));
+
+	    _this.state = {
+	      start: true
+	    };
+	    return _this;
 	  }
 
 	  _createClass(Index, [{
+	    key: 'refaktorVaihda',
+	    value: function refaktorVaihda() {
+	      this.setState({
+	        start: false
+	      });
+	    }
+	  }, {
+	    key: 'refaktorThisSelect',
+	    value: function refaktorThisSelect() {
+	      if (this.state.start) {
+	        return _react2.default.createElement(_Start2.default, { onClick: this.refaktorVaihda.bind(this) });
+	      } else {
+	        return _react2.default.createElement(_UutisContainer2.default, null);
+	      }
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
+	      //  <Start />
 	      return _react2.default.createElement(
 	        'div',
 	        null,
-	        _react2.default.createElement(_HeaderBar2.default, { titleName: 'Tuonoset.fi' }),
-	        _react2.default.createElement(_Uutinen2.default, null)
+	        this.refaktorThisSelect()
 	      );
 	    }
 	  }]);
@@ -21509,13 +21538,18 @@
 	  _createClass(HeaderBar, [{
 	    key: 'render',
 	    value: function render() {
+	      //
 	      return _react2.default.createElement(
-	        'div',
+	        'header',
 	        { className: 'bar' },
 	        _react2.default.createElement(_logo2.default, null),
-	        '  ',
-	        this.props.titleName,
-	        '  '
+	        _react2.default.createElement(
+	          'span',
+	          { className: 'bar-otsikko' },
+	          this.props.titleName,
+	          ' '
+	        ),
+	        _react2.default.createElement('span', null)
 	      );
 	    }
 	  }]);
@@ -21565,7 +21599,7 @@
 	        "div",
 	        null,
 	        " ",
-	        _react2.default.createElement("img", { className: "logo", src: "./logo.png" }),
+	        _react2.default.createElement("img", { className: "logo-bar", src: "./photos/recropped.png" }),
 	        " "
 	      );
 	    }
@@ -21580,7 +21614,7 @@
 /* 174 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -21610,12 +21644,23 @@
 	  }
 
 	  _createClass(Uutinen, [{
-	    key: "render",
+	    key: 'render',
 	    value: function render() {
 	      return _react2.default.createElement(
-	        "div",
-	        { className: "uutinen" },
-	        "Lorem Ipsum on yksinkertaisesti testausteksti, jota tulostus- ja ladontateollisuudet käyttävät. Lorem Ipsum on ollut teollisuuden normaali testausteksti jo 1500-luvulta asti, jolloin tuntematon tulostaja otti kaljuunan ja sekoitti sen tehdäkseen esimerkkikirjan. Se ei ole selvinnyt vain viittä vuosisataa, mutta myös loikan elektroniseen kirjoitukseen, jääden suurinpiirtein muuntamattomana. Se tuli kuuluisuuteen 1960-luvulla kun Letraset-paperiarkit, joissa oli Lorem Ipsum pätkiä, julkaistiin ja vielä myöhemmin tietokoneen julkistusohjelmissa, kuten Aldus PageMaker joissa oli versioita Lorem Ipsumista."
+	        'article',
+	        null,
+	        'Sukujuhla',
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'Sukuseuran 30 –vuotisjuhla ja juhlakokous pidettiin lauantaina 9.7.2016 Juuassa ent, elokuvateatteri Seuran talolla. Mukana oli vajaa 50 juhlijaa. Juhla aloitettiin Martti Puumalaisen ja Missio-kuoron pitämällä hartaus- ja siunaustilaisuudella. Ruokailun  jälkeen ohjelmallinen sukujuhla jatkui Tuonosten  yhteislaululla ja seuran esimies Sippo Ryynänen tervehdyssanoissaan kertasi seuran 30 vuotista toimintaa. Seuran tapahtumista vuosien varrelta oli myös nähtävillä kuvakooste valkokankaalla.Mari Putkuri esitti yksinlauluna Svetlana Pustotoshnayan pianosäestyksellä  Suklaasydän ja Satumaa iskelmät. Kirjailija Heikki Turunen. juhlavieraspuhujana kertoi värikkäästi ”pääsemisestään” Tuonosen sukuun. Kirjailijan vaimo Seija kun on Piitterin Toivo Tuonosen  tyttäriä. Ennen juhlan päättänyttä yhteistä Karjalaisten laulua kukitettiin pitkäaikaisesta sukuseuran toiminnasta paikalla olleet  Pauli Tuononen, Taisto Tuononen (T-joki) , Liisa Laasonen ja Ahti Kainulainen ja lisäksi poissaolevat Alli Vattulainen, Erkki Tuononen ja Juhani Keränen.'
+	        ),
+	        'Sukuseuran kokous  ',
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'Sukuseuran kokous valitun puheenjohtajan Matti Romppasen johdolla  hyväksyi yksimielisesti menneen kolmivuotiskauden tilit ja tulevan toimintasuunnitelman sukukirjahankkeen käynnistämisineen. Vuotuisjäsenmaksu korotettiin nykyisestä 10 eurosta 15 euroon ja ainaisjäsenmaksu nykyisestä 10 kertaisesta vuosimaksusta  20 kertaiseksi Hallituksesta jäivät pois Martti Puumalainen ja esimies Sippo Ryynänen, joka ilmoitti keskittyvänsä jatkossa  Sotkuman Tuonosten sukututkimukseen. Uusina jäseninä tulivat hallitukseen Hannu Nurmi Kuopiosta ja Pertti Antero Tuononen Juuasta. Ylimääräisenä asiana kokous kutsui seuran ensimmäiseksi kunniajäseneksi Pauli Tuonosen.'
+	        )
 	      );
 	    }
 	  }]);
@@ -21624,6 +21669,145 @@
 	}(_react2.default.Component);
 
 	exports.default = Uutinen;
+
+/***/ },
+/* 175 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _Uutinen = __webpack_require__(174);
+
+	var _Uutinen2 = _interopRequireDefault(_Uutinen);
+
+	var _HeaderBar = __webpack_require__(172);
+
+	var _HeaderBar2 = _interopRequireDefault(_HeaderBar);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var UutisContainer = function (_Component) {
+	  _inherits(UutisContainer, _Component);
+
+	  function UutisContainer() {
+	    _classCallCheck(this, UutisContainer);
+
+	    return _possibleConstructorReturn(this, (UutisContainer.__proto__ || Object.getPrototypeOf(UutisContainer)).apply(this, arguments));
+	  }
+
+	  _createClass(UutisContainer, [{
+	    key: "getUutiset",
+	    value: function getUutiset() {}
+	  }, {
+	    key: "render",
+	    value: function render() {
+	      return _react2.default.createElement(
+	        "div",
+	        { className: "main" },
+	        _react2.default.createElement(_HeaderBar2.default, { titleName: "Uutiset" }),
+	        _react2.default.createElement(_Uutinen2.default, null),
+	        _react2.default.createElement(_Uutinen2.default, null),
+	        _react2.default.createElement(
+	          "footer",
+	          null,
+	          "Footer"
+	        )
+	      );
+	    }
+	  }]);
+
+	  return UutisContainer;
+	}(_react.Component);
+
+	exports.default = UutisContainer;
+
+/***/ },
+/* 176 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Start = function (_Component) {
+	  _inherits(Start, _Component);
+
+	  function Start() {
+	    _classCallCheck(this, Start);
+
+	    return _possibleConstructorReturn(this, (Start.__proto__ || Object.getPrototypeOf(Start)).apply(this, arguments));
+	  }
+
+	  _createClass(Start, [{
+	    key: "render",
+	    value: function render() {
+	      return _react2.default.createElement(
+	        "div",
+	        null,
+	        _react2.default.createElement(
+	          "div",
+	          { className: "center top" },
+	          _react2.default.createElement("img", { className: "logo", src: "./photos/recropped.png" }),
+	          _react2.default.createElement(
+	            "h1",
+	            { className: "midden" },
+	            "Tuonoset.fi"
+	          )
+	        ),
+	        _react2.default.createElement(
+	          "div",
+	          { className: "center mid" },
+	          _react2.default.createElement(
+	            "div",
+	            { onClick: this.props.onClick, className: "animated-button" },
+	            _react2.default.createElement(
+	              "div",
+	              { className: "center-text" },
+	              " Tervetuloa "
+	            )
+	          )
+	        ),
+	        _react2.default.createElement("div", { className: "center bottom" })
+	      );
+	    }
+	  }]);
+
+	  return Start;
+	}(_react.Component);
+
+	exports.default = Start;
 
 /***/ }
 /******/ ]);
