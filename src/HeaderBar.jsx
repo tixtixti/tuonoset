@@ -4,7 +4,14 @@ class HeaderBar extends React.Component{
 
 
   render(){
-    return (<div className="bar" ><Logo />  {this.props.titleName}  </div>)
+    //
+    return (
+      <header className="bar" >
+          <Logo />
+          <span className="bar-otsikko">{this.props.titleName} </span>
+          <span></span>
+    </header>
+    )
   }
 }
 export default HeaderBar
